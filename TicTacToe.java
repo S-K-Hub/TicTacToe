@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class TicTacToe {
+
+    String[] board = new String[10];
+    String turn;
+    Scanner scanner;
+
+    public static void main(String[] args) {
+
+        TicTacToe ticTacToe = new TicTacToe();
+        ticTacToe.creatingBoard();
+        ticTacToe.playerTurn();
+    }
+
+    //UC1 - Creating empty board
+    public void creatingBoard() {
+        for(int indexValue = 0; indexValue <= 9; indexValue++) {
+            board[indexValue] = " ";
+        }
+
+    }
+
+    //UC2 - Choosing tokens
+    public void playerTurn() {
+        String playerToken, computerToken;
+        scanner = new Scanner(System.in);
+        System.out.println("Choose x or o: ");
+        if(scanner.nextLine().equals("x")) {
+            playerToken = scanner.nextLine();
+            computerToken = "o";
+        } else if (scanner.nextLine().equals("x")){
+            playerToken = scanner.nextLine();
+            computerToken = "x";
+        } else {
+            System.out.println("Invalid option");
+        }
+
+
+    }
+}
